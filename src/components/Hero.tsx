@@ -70,7 +70,7 @@ const Hero = () => {
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
         >
           <span className="block text-foreground">Hi, I'm</span>
-          <span className="block gradient-text glow-text">Alex Johnson</span>
+          <span className="block gradient-text glow-text">yaseen affan</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -80,7 +80,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto"
         >
-          Full Stack Developer & UI/UX Designer
+          Java Backend Developer | DSA Enthusiast | Problem Solver
         </motion.p>
 
         {/* Description */}
@@ -90,8 +90,8 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          Passionate about crafting beautiful, functional digital experiences using modern technologies. 
-          I specialize in React, Node.js, and creating seamless user interfaces.
+          Currently focused on mastering Java fundamentals and building problem-solving skills through DSA. 
+          Excited to start building backend projects and exploring the world of scalable systems.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -104,37 +104,131 @@ const Hero = () => {
           <Button
             size="lg"
             className="btn-hero text-primary-foreground px-8 py-3 text-lg font-medium"
+            onClick={() => window.location.href = '/projects'}
           >
-            <Download className="mr-2 h-5 w-5" />
-            Download Resume
+            <ArrowDown className="mr-2 h-5 w-5 rotate-[-90deg]" />
+            View My Work
           </Button>
           
           <Button
             variant="outline"
             size="lg"
             className="border-primary/50 text-primary hover:bg-primary/10 px-8 py-3 text-lg font-medium"
+            onClick={() => window.open('/resume.pdf', '_blank')}
           >
-            <ExternalLink className="mr-2 h-5 w-5" />
-            View Projects
+            <Download className="mr-2 h-5 w-5" />
+            Download Resume
           </Button>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Quick Stats Row */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col items-center cursor-pointer"
-          onClick={scrollToAbout}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20 max-w-2xl mx-auto"
         >
-          <p className="text-sm text-muted-foreground mb-2">Scroll to explore</p>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="p-2 rounded-full border border-primary/30 hover:border-primary/60 transition-colors duration-200"
-          >
-            <ArrowDown className="h-4 w-4 text-primary" />
-          </motion.div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-2">Building</div>
+            <div className="text-muted-foreground text-sm">Java + DSA Skills</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-2">Goal</div>
+            <div className="text-muted-foreground text-sm">Backend Projects</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-2">100%</div>
+            <div className="text-muted-foreground text-sm">Client Satisfaction</div>
+          </div>
+        </motion.div>
+
+        {/* Featured Projects Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+          className="w-full max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 gradient-text">Featured Projects</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Here are some of my recent works that showcase my skills and passion for development.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Project 1 */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="portfolio-card p-6 rounded-xl group"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-3">College Management System</h3>
+              <p className="text-muted-foreground mb-4 text-sm">
+                Java + MySQL + JDBC, with CRUD features and authentication (coming soon).
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">Java</span>
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">MySQL</span>
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">JDBC</span>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" className="text-xs opacity-50">Live Demo</Button>
+                <Button variant="outline" size="sm" className="text-xs opacity-50">GitHub</Button>
+              </div>
+            </motion.div>
+
+            {/* Project 2 */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="portfolio-card p-6 rounded-xl group"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-3">Expense Tracker</h3>
+              <p className="text-muted-foreground mb-4 text-sm">
+                Java console-based, OOP principles, file handling for expense logs (coming soon).
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">Java</span>
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">OOP</span>
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">File I/O</span>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" className="text-xs opacity-50">Live Demo</Button>
+                <Button variant="outline" size="sm" className="text-xs opacity-50">GitHub</Button>
+              </div>
+            </motion.div>
+
+            {/* Project 3 */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="portfolio-card p-6 rounded-xl group"
+            >
+              <h3 className="text-xl font-bold text-foreground mb-3">DSA Practice Tracker</h3>
+              <p className="text-muted-foreground mb-4 text-sm">
+                Java tool to track daily problem-solving activity across platforms (planned).
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">Java</span>
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">LocalStorage</span>
+                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">OOP</span>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" className="text-xs opacity-50">Live Demo</Button>
+                <Button variant="outline" size="sm" className="text-xs opacity-50">GitHub</Button>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-primary/50 text-primary hover:bg-primary/10 px-8 py-3"
+              onClick={() => window.location.href = '/projects'}
+            >
+              View All Projects
+              <ArrowDown className="ml-2 h-5 w-5 rotate-[-90deg]" />
+            </Button>
+          </div>
         </motion.div>
       </div>
 
